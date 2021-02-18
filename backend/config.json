@@ -1,0 +1,21 @@
+{    
+    "cacheExpireTime": 10800,
+    "moviesListingProviders": [
+        {
+            "id": "1",
+            "name": "cinemaworld movies",
+            "endpoint": "https://challenge.lexicondigital.com.au/api/cinemaworld/movies",
+            "authentication": {
+                "x-api-key": "Yr2636E6BTD3UCdleMkf7UEdqKnd9n361TQL9An7"
+            }
+        },
+        {
+            "id": "2",
+            "name":"filmworld movies",
+            "endpoint": "https://challenge.lexicondigital.com.au/api/filmworld/movies",
+            "authentication": {
+                "x-api-key": "Yr2636E6BTD3UCdleMkf7UEdqKnd9n361TQL9An7"
+            }
+        }
+    ]
+}
