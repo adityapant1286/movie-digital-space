@@ -24,12 +24,10 @@ class MovieListingController {
             res.status(200).send(result);
         }).catch(err => {
             console.log('---controller err---');
-            console.log(err.status);
-            console.log(err.statusText);
-            console.log(err.data);
-            console.log(err);
+            console.log(err.response.status);
+            console.log(err.response.statusText);
             
-            // res.status(err.status).send(err.message);
+            res.status(err.response.status).send(err.response.data.message);
         });
     }
 }

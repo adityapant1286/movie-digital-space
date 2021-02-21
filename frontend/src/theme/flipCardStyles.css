@@ -1,0 +1,11 @@
+.flipCard-appear {
+    opacity: 0.01;
+    transform: rotate(20deg);
+  }
+  
+  .flipCard-appear.flipCard-appear-active {
+    opacity: 1;
+    transition: all 1s ease-in;
+  }
+  
+  

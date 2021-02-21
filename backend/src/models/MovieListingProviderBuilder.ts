@@ -9,6 +9,7 @@ export default class MovieListingEndpointBuilder {
             name: "",
             id: "",
             endpoint: "",
+            resourceEndpoint: "",
             authentication: {}
         };
     }
@@ -25,6 +26,11 @@ export default class MovieListingEndpointBuilder {
 
     endpoint(endpoint: string): MovieListingEndpointBuilder {
         this._provider.endpoint = endpoint;
+        return this;
+    }
+
+    resourceEndpoint(resourceEndpoint: string): MovieListingEndpointBuilder {
+        this._provider.resourceEndpoint = resourceEndpoint;
         return this;
     }
 

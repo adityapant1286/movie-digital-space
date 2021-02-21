@@ -13,14 +13,14 @@ class App {
         this.app = express();
         this.port = port;
 
-        this.loadControllers(controllers);
         this.loadMiddlewares();
+        this.loadControllers(controllers);
     }
 
     private loadMiddlewares() {
         // this.app.use(morgan("combined")); // logger
-        this.app.use(morgan("dev")); // logger
         this.app.use(cors());
+        this.app.use(morgan("dev")); // logger
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: false }));
         this.app.use(cookieParser());
@@ -32,7 +32,7 @@ class App {
         this.app.get('/', (req, res) => res.send(resMsg));
 
         controllers.forEach(c => {
-            this.app.use('/', c.router);
+            this.app.use('/v1/', c.router);
         });
 
 
