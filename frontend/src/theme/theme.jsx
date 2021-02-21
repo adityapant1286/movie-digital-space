@@ -6,8 +6,8 @@ export const light = {
         main: '#09315f'
       },
       secondary: {
-        // main: '#80faf8'
-        main: '#36dcda'
+        main: '#80faf8'
+        // main: '#36dcda'
       },
       background: {
         default: '#E9EFF5'
@@ -24,8 +24,8 @@ export const light = {
 export const dark = {
     palette: {
       primary: {
-        // main: '#80faf8'
-        main: '#36dcda'
+        main: '#80faf8'
+        // main: '#36dcda'
       },
       secondary: {
         // main: '#274472'

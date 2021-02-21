@@ -56,6 +56,10 @@ export const showToastByOptions = (header = '', body = '',
     );
 };
 
+export const defaultToast = (heading='', msg='', isJson=false) => {
+    showToastByType(toast.TYPE.DEFAULT, heading, msg, isJson);
+};
+
 export const successToast = (heading='', msg='', isJson=false) => {
     showToastByType(toast.TYPE.SUCCESS, heading, msg, isJson);
 };

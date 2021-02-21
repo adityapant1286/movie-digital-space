@@ -43,8 +43,7 @@ class App {
 
         this.app.use((_err: any, _req: Request, _res: Response, next: (arg0: createError.HttpError) => void) => {
             console.log(_err.status + ' | 500');
-            _res.status(_err.status || 500 || 502);
-            _res.render('error', {
+            _res.status(_err.status || 500 || 502).json({
                 message: _err.message,
                 error: _err
             });

@@ -14,6 +14,26 @@
               0 1px 5px 0 rgba(0,0,0,.12);
 }
 
+.Toastify__toast--default {
+    background: #fafafa;
+}
+
+.Toastify__toast--default 
+    > .Toastify__toast-body {
+        color: #37517e;
+    }
+
+.Toastify__toast--default
+    > .Toastify__progress-bar--default {
+        background: #37517e;
+    }
+
+.Toastify__toast--default 
+    > .Toastify__close-button 
+    > svg {
+    fill: #09315f;
+}
+
 .Toastify__toast--info {
     background: #375A7F;
 }

@@ -3,47 +3,41 @@ import _ from 'lodash';
 
 import cfg from "../../config.json";
 import CacheService from "../cacheStore/CacheService";
-import MovieListingProvider from "../models/MovieListingProvider";
-import MovieListingProviderBuilder from "../models/MovieListingProviderBuilder";
+import ProviderService from './ProviderService';
+import TransformService from './TransformService';
 
-const _movieListingCache = new CacheService(cfg.cacheExpireTime);
-const _providerCache = new CacheService(86400); // 24 hours
+const __movieListingCache = new CacheService(cfg.cacheExpireTime);
+const __movieDetailsCache = new CacheService(cfg.cacheExpireTime);
 
 class MovieListingService {
 
-    private providersKey = 'providers';
     private allMovieListingKey = 'allMovieListing';
+    private movieDetailKeyPrefix = 'movieDetails-';
+        
+    private providerService: ProviderService;
+    private transformService: TransformService;
 
     constructor() {
+        this.providerService = new ProviderService();
+        this.transformService = new TransformService();
     }
 
-    private getProviders(): Promise<MovieListingProvider[]> {
+    private async getProviderPromises(): Promise<Promise<AxiosResponse<any>>[]> {
 
-        return _providerCache.get(this.providersKey, 
-                                () => Promise.resolve(cfg.moviesListingProviders
-                                            .map((e: any) => new MovieListingProviderBuilder()
-                                                        .name(e.name)
-                                                        .id(e.id)
-                                                        .endpoint(e.endpoint)
-                                                        .resourceEndpoint(e.resourceEndpoint)
-                                                        .authentication(e.authentication)
-                                                        .build()
-                                                )
-                                )
-        ).then((result: any) => result);
-
-    }
-
-    private async getProviderPromises() {
+        const providers = await this.providerService.getProviders();
         
-        const providers = await this.getProviders();
+        return providers.map(p => axios.get(p.endpoint, { 
+                                                headers: { "x-api-key": p.authentication['x-api-key'] } 
+                                            })
+                            );
+    }
 
-        return providers.map(p => axios.get(p.endpoint, {
-                                        headers: {
-                                            "x-api-key": p.authentication['x-api-key']
-                                        }
-                                    })
-                );
+    private async getProviderDetailPromises(providers: any[]): Promise<Promise<AxiosResponse<any>>[]> {
+        const providerMap = await this.providerService.getProvidersMapByName();
+
+        return providers.map(p => axios.get(p.resourceEndpoint, {
+            headers: providerMap[p.provider].authentication
+        }));
     }
 
     public findAll(): Promise<any> {
@@ -52,20 +46,24 @@ class MovieListingService {
         //     [key:string]: any; 
         // } = {};        
         
-        return _movieListingCache.get(this.allMovieListingKey, 
+        return __movieListingCache.get(this.allMovieListingKey, 
                 async () => {
-                    const promises = await this.getProviderPromises();
+                    const promises = await this.getProviderPromises();                    
 
                     const all = await Promise.all(promises);
                     const movieListing: any[] = [];
+                    const providersMap = await this.providerService.getProvidersMapByName();                    
 
                     all.forEach(resp => {
                             if (resp && resp.status === 200) {
                                 const pName = resp.data.Provider;
                                 const movieData = resp.data.Movies.map((m: any) => {
                                     m['provider'] = pName;
+                                    m['resourceEndpoint'] = providersMap[pName].resourceEndpoint;
                                     return m;
                                 });
+
+                                //console.log(movieData);
 
                                 movieListing.push(movieData);
 
@@ -73,11 +71,36 @@ class MovieListingService {
                             }
                         });
 
-                    const merged = [].concat.apply([], movieListing);
+                    const transformedData = this.transformService.transformMediaData(movieListing);
+                    movieListing.length = 0;
 
-                    return Promise.resolve(merged);
+                    return Promise.resolve(transformedData);
 
-                }).then((result: any) => result);
+                });
+    }
+
+    public findDetails(movie: any): Promise<any> {
+        
+        //const providerMap = this.providerService.getProvidersMapByName();
+        console.log(movie.title);
+
+        return __movieDetailsCache.get(movie.title, async () => {
+
+            const promises = await this.getProviderDetailPromises(movie.providers);
+            const all = await Promise.all(promises);
+            const details: any[] = [];
+            all.forEach(resp => {
+                if (resp && resp.status === 200) {
+                    const d = resp.data;
+                    d['provider'] = _.find(movie.providers, ['id', d.ID]).provider;
+                    details.push(d);
+                }
+            });
+
+            const detailsWithPricing = this.transformService.transformDetailsData(details);
+
+            return Promise.resolve(detailsWithPricing);
+        });
     }
 
 }
