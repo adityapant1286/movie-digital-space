@@ -146,7 +146,7 @@ Displays the movies retrieved from multiple providers. You can add or remove mul
 
 Clicking on the information "i" button displays the movie information tabs. User can view the price or info or cast as desire. On clicking of the "i" button the frontend will compute the lowest price amongst all the providers. The lowest price will display on a toast notification as well as a badge.
 
-<img src="https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222190705895.png" alt="Media Details" style="zoom:50%;" />
+<img src="https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222190705895.png" alt="Media Details" style="zoom:25%;" />
 
 
 
@@ -154,7 +154,7 @@ Clicking on the information "i" button displays the movie information tabs. User
 
 On error or provider service disruption a common message will be displayed. Actual error message can be logged to kibana or other logging frameworks.
 
-![Error Handling](https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222191758206.png)
+<img src="https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222191758206.png" alt="Error Handling" style="zoom:25%;" />
 
 
 
@@ -162,9 +162,9 @@ On error or provider service disruption a common message will be displayed. Actu
 
 The application is designed to work on different screens including mobile, tablets, desktop, and large monitors.
 
-<img src="https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222191224985.png" alt="Responsive Mobile" style="zoom:50%;" />
+<img src="https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222191224985.png" alt="Responsive Mobile" style="zoom:25%;" />
 
-<img src="https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222191135258.png" alt="Responsive Tablet" style="zoom:50%;" />
+<img src="https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222191135258.png" alt="Responsive Tablet" style="zoom:25%;" />
 
 
 
