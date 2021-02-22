@@ -16,7 +16,7 @@ import PowerOffIcon from '@material-ui/icons/PowerOffTwoTone';
 import BackIcon from '@material-ui/icons/BackspaceRounded';
 
 
-import { blueGrey, orange } from '@material-ui/core/colors';
+import { orange, cyan } from '@material-ui/core/colors';
 import { useTheme } from '@material-ui/core/styles';
 
 import "../../../theme/flipCardStyles.css";
@@ -66,7 +66,7 @@ const MediaFlipCard = (props) => {
       zIndex: '2'
     },
     infoIcon: {
-      color: blueGrey[200],
+      color: cyan['A400'],
     },
     backIcon: {
         color: orange[500],
@@ -133,11 +133,13 @@ const MediaFlipCard = (props) => {
           )
           .subscribe(pricingWithDetails => {
             // console.log(pricingWithDetails);
-            const lowestPriceProvider = getLowestPrice(pricingWithDetails.pricing);
+            if (pricingWithDetails) {
+              const lowestPriceProvider = getLowestPrice(pricingWithDetails.pricing);
             
-            defaultToast('Loswest Price', lowestPriceProvider.provider + ': ' + lowestPriceProvider.price);
-
-            setPricingAndDetails(pricingWithDetails);
+              defaultToast('Loswest Price', lowestPriceProvider.provider + ': ' + lowestPriceProvider.price);
+  
+              setPricingAndDetails(pricingWithDetails);
+            }
             setSyncing(false);
           });
     }
@@ -199,7 +201,7 @@ const MediaFlipCard = (props) => {
             </GridListTile>
         </Paper>
         
-        <Card style={styles.back}>
+        <Card elevation={4} style={styles.back}>
             {
               isError 
                 ? errorOccurred() 

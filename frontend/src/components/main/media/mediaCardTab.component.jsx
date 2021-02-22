@@ -85,34 +85,76 @@ const MediaCardTab =  (props) => {
                         role="tabpanel" id="infoTabPanel" aria-labelledby="infoTab">
                     <Typography  variant="body2" component="div">
                         <Typography variant="subtitle1" component="div">Year:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Year}</Typography>
+                        <Typography variant="body2" gutterBottom
+                                    color="textSecondary" component="div">
+                            {detailsData.Year}
+                        </Typography>
+
                         <Typography variant="subtitle1" component="div">Rated:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Rated}</Typography>
+                        <Typography variant="body2" gutterBottom
+                                    color="textSecondary" component="div">
+                            {detailsData.Rated}
+                        </Typography>
+
                         <Typography variant="subtitle1" component="div">Genere:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Genere}</Typography>
+                        <Typography variant="body2" gutterBottom
+                                    color="textSecondary" component="div">
+                            {detailsData.Genere}
+                        </Typography>
+
                         <Typography variant="subtitle1" component="div">Released:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Released}</Typography>
+                        <Typography variant="body2" gutterBottom
+                                    color="textSecondary" component="div">
+                            {detailsData.Released}
+                        </Typography>
                         <Typography variant="subtitle1" component="div">Duration:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Runtime}</Typography>
+                        <Typography variant="body2" gutterBottom
+                                    color="textSecondary" component="div">
+                            {detailsData.Runtime}
+                        </Typography>
                         <Typography variant="subtitle1" component="div">Language:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Language}</Typography>
+                        <Typography variant="body2" gutterBottom
+                                    color="textSecondary" component="div">
+                            {detailsData.Language}
+                        </Typography>
+
                         <Typography variant="subtitle1" component="div">Country:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Country}</Typography>
+                        <Typography variant="body2"
+                                    color="textSecondary" component="div">
+                            {detailsData.Country}
+                        </Typography>
+
                     </Typography>
                 </article>
                 <article key={uuidv4()} hidden={selectedTab !== 2} className={classes.tabPanel}
                         role="tabpanel" id="castTabPanel" aria-labelledby="castTab">
                     <Typography  variant="body2" component="div">
                         <Typography variant="subtitle1" component="div">Actors:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Actors}</Typography>
+                        <Typography variant="body2" gutterBottom
+                                    color="textSecondary" component="div">
+                            {detailsData.Actors}
+                        </Typography>
+
                         <Typography variant="subtitle1" component="div">Director:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Director}</Typography>
+                        <Typography variant="body2" gutterBottom
+                                    color="textSecondary" component="div">
+                            {detailsData.Director}
+                        </Typography>
+
                         <Typography variant="subtitle1" component="div">Writer:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Writer}</Typography>
+                        <Typography variant="body2" gutterBottom
+                                    color="textSecondary" component="div">
+                            {detailsData.Writer}
+                        </Typography>
+
                         <Typography variant="subtitle1" component="div">Production:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Production}</Typography>
+                        <Typography variant="body2" 
+                                    color="textSecondary" component="div">
+                            {detailsData.Production}
+                        </Typography>
+
                         {/* <Typography variant="subtitle1" component="div">Plot:</Typography>
-                        <Typography variant="caption" color="textSecondary" component="div">{detailsData.Plot}</Typography> */}
+                        <Typography variant="body2" color="textSecondary" component="div">{detailsData.Plot}</Typography> */}
                     </Typography>
                 </article>
             </div>

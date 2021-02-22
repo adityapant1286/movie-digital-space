@@ -16,6 +16,9 @@ export const getListing = () => {
 };
 
 export const getMediaDetails = (title, data) => {
+    // console.log('---------------');
+    // console.log(title);
+    // console.log(data);
 
     return defer(
         () => axios.post(BACKEND_HOST + MOVIE_DETAILS_ENDPOINT, {
