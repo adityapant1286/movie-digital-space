@@ -138,7 +138,7 @@ Frontend server accessible on `2288` port number. Edit `package.json` file in ca
 
 Displays the movies retrieved from multiple providers. You can add or remove multiple providers into the `providerConfig.json` file present in backend directory. The application is capable to retrieve data from multiple providers.
 
-![image-20210222175939398](/Users/apant/Library/Application Support/typora-user-images/image-20210222175939398.png)
+![Home Screen](https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222175939398.png)
 
 
 
@@ -146,7 +146,7 @@ Displays the movies retrieved from multiple providers. You can add or remove mul
 
 Clicking on the information "i" button displays the movie information tabs. User can view the price or info or cast as desire. On clicking of the "i" button the frontend will compute the lowest price amongst all the providers. The lowest price will display on a toast notification as well as a badge.
 
-<img src="/Users/apant/Library/Application Support/typora-user-images/image-20210222190705895.png" alt="image-20210222190705895" style="zoom:50%;" />
+<img src="https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222190705895.png" alt="Media Details" style="zoom:50%;" />
 
 
 
@@ -154,15 +154,19 @@ Clicking on the information "i" button displays the movie information tabs. User
 
 On error or provider service disruption a common message will be displayed. Actual error message can be logged to kibana or other logging frameworks.
 
-![image-20210222191758206](/Users/apant/Library/Application Support/typora-user-images/image-20210222191758206.png)
+![Error Handling](https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222191758206.png)
+
+
 
 ##### Responsive
 
 The application is designed to work on different screens including mobile, tablets, desktop, and large monitors.
 
-<img src="/Users/apant/Library/Application Support/typora-user-images/image-20210222191224985.png" alt="image-20210222191224985" style="zoom:50%;" />
+<img src="https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222191224985.png" alt="Responsive Mobile" style="zoom:50%;" />
 
-<img src="/Users/apant/Library/Application Support/typora-user-images/image-20210222191135258.png" alt="image-20210222191135258" style="zoom:50%;" />
+<img src="https://github.com/adityapant1286/movie-digital-space/blob/main/readme-img/image-20210222191135258.png" alt="Responsive Tablet" style="zoom:50%;" />
+
+
 
 ##### Miscellaneous
 
