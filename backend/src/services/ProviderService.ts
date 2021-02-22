@@ -1,4 +1,4 @@
-import cfg from "../../config.json";
+import cfg from "../../providerConfig.json";
 import CacheService from "../cacheStore/CacheService";
 import MovieListingProvider from "../models/MovieListingProvider";
 import MovieListingProviderBuilder from "../models/MovieListingProviderBuilder";

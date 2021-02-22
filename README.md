@@ -14,9 +14,76 @@ In conclusion, backend is NodeJs(TypeScript) with REST API endpoints and fronten
 
 ## How to?
 
-Clone the repository
+> Clone the repository
+
+```shell
+git clone https://github.com/adityapant1286/movie-digital-space.git
+```
+
+
+
+> Application Structure
 
 ```
-git clone 
+movie-digital-space
+.
+├── LICENSE
+├── README.md
+├── backend									# backend node server
+│   ├── Dockerfile					# Docker image file (Optionally deploy on docker)
+│   ├── config.json					# backend app configuration
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── server.ts
+│   ├── src
+│   │   ├── app.ts
+│   │   ├── cacheStore
+│   │   │   └── CacheService.ts
+│   │   ├── controllers
+│   │   │   └── MovieListingController.ts
+│   │   ├── models
+│   │   │   ├── MovieListingProvider.ts
+│   │   │   └── MovieListingProviderBuilder.ts
+│   │   └── services
+│   │       ├── MovieListingService.ts
+│   │       ├── ProviderService.ts
+│   │       └── TransformService.ts
+│   └── tsconfig.json
+└── frontend
+    ├── Dockerfile
+    ├── __tsconfig.json.bak
+    ├── package-lock.json
+    ├── package.json
+    └── src
+        ├── App.css
+        ├── App.jsx
+        ├── App.test.js
+        ├── cachestore
+        │   └── cache.service.jsx
+        ├── common
+        │   ├── constants.jsx
+        │   ├── customTooltip.component.jsx
+        │   └── toastify.service.jsx
+        ├── components
+        │   ├── header
+        │   │   ├── appbar
+        │   │   │   └── media.appbar.jsx
+        │   │   └── mediaHeader.component.jsx
+        │   └── main
+        │       └── media
+        │           ├── media.component.jsx
+        │           ├── mediaCardTab.component.jsx
+        │           └── mediaFlipCard.component.jsx
+        ├── helpers
+        │   └── mediaComponent.helper.jsx
+        ├── index.css
+        ├── index.js
+        ├── logo.svg
+        ├── reportWebVitals.js
+        ├── setupTests.js
+        └── theme
+            ├── flipCardStyles.css
+            ├── theme.jsx
+            └── toastifyStyle.css
 ```
 

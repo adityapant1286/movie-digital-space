@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import _ from 'lodash';
 
-import cfg from "../../config.json";
+import cfg from "../../providerConfig.json";
 import CacheService from "../cacheStore/CacheService";
 import ProviderService from './ProviderService';
 import TransformService from './TransformService';
