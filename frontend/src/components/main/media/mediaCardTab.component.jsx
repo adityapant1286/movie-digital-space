@@ -1,3 +1,23 @@
+/* 
+    Copyright (C) 2021  
+    Author: Aditya Pant
+    Email: aditya.java6@gmail.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+*/
+
 import React, { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import Typography from "@material-ui/core/Typography";
@@ -6,7 +26,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Badge from '@material-ui/core/Badge';
 
-import { teal } from '@material-ui/core/colors';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { getLowestPrice } from '../../../helpers/mediaComponent.helper';
@@ -16,19 +35,23 @@ const userStyles = makeStyles((theme) => ({
         flexGrow: 1,        
     },
     toolbar: theme.mixins.toolbar,
-    tabsContainer: {
-        padding: theme.spacing(2),
-        paddingTop: 0
-    },
-    lowPriceBadge: {
-        backgroundColor: teal['A400']
-    },
     tab: {
         minWidth: 0
     },
     tabPanel: {
+        padding: theme.spacing(2),
         paddingTop: "1.5rem"
-    }
+    },
+    lowPriceBadge: {
+        // backgroundColor: "transparent",
+        // color: theme.palette.primary.main,
+        fontFamily: "system-ui, -webkit-pictograph",
+        fontWeight: "700",
+        fontSize: "small",
+        padding: 0,
+        top: "4px",
+        right: "-10px",
+    },
 }));
 
 
@@ -47,11 +70,12 @@ const MediaCardTab =  (props) => {
 
     return (        
         <div key={uuidv4()} className={classes.root}>
-            <div className={classes.tabsContainer}>
-            <AppBar key={uuidv4()} position="static" color="transparent" elevation={0}>
+            <div>
+            <AppBar key={uuidv4()} position="static" color="default" elevation={3}>
                 <Tabs value={selectedTab} variant="fullWidth"
                     onChange={handleTabChange}
                     indicatorColor="primary"
+                    textColor="primary"
                     aria-label="Movie Info"                    
                 >
                     <Tab label="Price" id="priceTab" className={classes.tab} aria-controls="priceTabPanel"/>
@@ -67,7 +91,8 @@ const MediaCardTab =  (props) => {
                                 <React.Fragment key={uuidv4()}>
                                     {
                                         p.provider === lowestPriceProvider.provider
-                                        ? (<Badge color="primary" variant="dot">
+                                        ? (<Badge color="primary" badgeContent={<span>&#8600;</span>} 
+                                                    classes={{ colorPrimary: classes.lowPriceBadge }}>
                                             <Typography variant="subtitle1" 
                                                         component="div">{p.provider}:</Typography>
                                             </Badge>)
