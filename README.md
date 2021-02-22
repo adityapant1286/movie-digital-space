@@ -29,50 +29,50 @@ movie-digital-space
 .
 ├── LICENSE
 ├── README.md
-├── backend										# backend node server
-│   ├── Dockerfile						# Docker image file (Optionally deploy on docker)
-│   ├── providerConfig.json		# movie listing provider configurations
+├── backend				     # backend node server
+│   ├── Dockerfile			 # Docker image file (Optionally deploy on docker)
+│   ├── providerConfig.json	 # movie listing provider configurations
 │   ├── package-lock.json
-│   ├── package.json		# node js dependencies
-│   ├── server.ts				# main backend server file
+│   ├── package.json		 # node js dependencies
+│   ├── server.ts			 # main backend server file
 │   ├── src
-│   │   ├── app.ts			# loads middleware and routes of the application
+│   │   ├── app.ts			 # loads middleware and routes of the application
 │   │   ├── cacheStore
-│   │   │   └── CacheService.ts		# stores data into cache for a quicker response time
+│   │   │   └── CacheService.ts	 # stores data into cache for a quicker response time
 │   │   ├── controllers
-│   │   │   └── MovieListingController.ts		# REST endpoints
+│   │   │   └── MovieListingController.ts  # REST endpoints
 │   │   ├── models
-│   │   │   ├── MovieListingProvider.ts					# Provider data model
+│   │   │   ├── MovieListingProvider.ts			# Provider data model
 │   │   │   └── MovieListingProviderBuilder.ts	# Provider data model builder
 │   │   └── services
 │   │       ├── MovieListingService.ts	# Invoked by controller
 │   │       ├── ProviderService.ts		# Retrieves providers data (from json - future DB)
-│   │       └── TransformService.ts			# Transforms response to flat Json structure 
+│   │       └── TransformService.ts		# Transforms response to flat Json structure 
 │   └── tsconfig.json
-└── frontend									# React frontend
+└── frontend				# React frontend
     ├── Dockerfile
     ├── package-lock.json
-    ├── package.json					# React and node js dependencies
+    ├── package.json		# React and node js dependencies
     └── src
-        ├── App.css				# Application global styles
-        ├── App.jsx				# React app main file
+        ├── App.css			# Application global styles
+        ├── App.jsx			# React app main file
         ├── App.test.js
         ├── cachestore
-        │   └── cache.service.jsx		# stores data into cache for a quicker response time
+        │   └── cache.service.jsx	# stores data into cache for a quicker response time
         ├── common
-        │   ├── constants.jsx				# stores data into cache for a quicker response time
+        │   ├── constants.jsx		# stores data into cache for a quicker response time
         │   ├── customTooltip.component.jsx
         │   └── toastify.service.jsx	# display a toast message on the screen
         ├── components
         │   ├── header
         │   │   ├── appbar
-        │   │   │   └── media.appbar.jsx		# displays a brand bar at the top
-        │   │   └── mediaHeader.component.jsx		# warps all header components
+        │   │   │   └── media.appbar.jsx	  # displays a brand bar at the top
+        │   │   └── mediaHeader.component.jsx	# warps all header components
         │   └── main
         │       └── media
-        │           ├── media.component.jsx					# warps all media components
-        │           ├── mediaCardTab.component.jsx	# media additional infor card
-        │           └── mediaFlipCard.component.jsx	# media info card
+        │           ├── media.component.jsx		# warps all media components
+        │           ├── mediaCardTab.component.jsx	 # media additional infor card
+        │           └── mediaFlipCard.component.jsx	 # media info card
         ├── helpers
         │   └── mediaComponent.helper.jsx		# communicates with backend app via REST
         ├── index.css
@@ -82,7 +82,7 @@ movie-digital-space
         ├── setupTests.js
         └── theme
             ├── flipCardStyles.css	
-            ├── theme.jsx						# application theme (dark/light)
+            ├── theme.jsx				# application theme (dark/light)
             └── toastifyStyle.css		# tostify lib styles
 ```
 
