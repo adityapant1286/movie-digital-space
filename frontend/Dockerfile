@@ -1,5 +1,5 @@
 # pull official base image
-FROM alpine:3.10
+FROM alpine:3.13
 
 ENV NODE_VERSION 15.9.0
 
