@@ -12,16 +12,16 @@
   "license": "AGPL-3.0-or-later",
   "dependencies": {
     "@types/lodash": "^4.14.168",
-    "axios": "^0.21.1",
+    "axios": "^0.21.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "http-errors": "^1.8.0",
     "jsonata": "^1.8.4",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "morgan": "^1.10.0",
     "node-cache": "^5.1.2",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.17"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
