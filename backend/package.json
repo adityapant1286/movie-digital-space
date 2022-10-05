@@ -11,7 +11,7 @@
   "author": "Aditya Pant",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
-    "@types/lodash": "^4.14.184",
+    "@types/lodash": "^4.14.185",
     "axios": "^0.21.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
