@@ -16,7 +16,7 @@
     "clsx": "^1.1.1",
     "cross-env": "^7.0.2",
     "date-fns": "^2.16.1",
-    "jsonata": "^1.8.4",
+    "jsonata": "^1.8.7",
     "lodash": "^4.17.20",
     "moment": "^2.29.4",
     "node-cache": "^5.1.2",
